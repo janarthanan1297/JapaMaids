@@ -5,7 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:japamaids/layouts/find.dart';
-import 'package:page_transition/page_transition.dart';
+import 'package:japamaids/animation/page_transition.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -228,7 +228,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       child: FadeInAnimation(
                                         child: GestureDetector(
                                           onTap: () {
-                                            Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: FindDoula()));
+                                            Navigator.of(context).push(CreateRoute(page: FindDoula()));
                                           },
                                           child: Container(
                                             height: 88,

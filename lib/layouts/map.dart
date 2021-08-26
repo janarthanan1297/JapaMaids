@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:japamaids/animation/page_transition.dart';
 import 'package:japamaids/layouts/doula_list.dart';
-import 'package:page_transition/page_transition.dart';
 
 class Maps extends StatefulWidget {
   @override
@@ -244,13 +244,10 @@ class _HomepageState extends State<Maps> {
                       children: <Widget>[
                         TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  PageTransition(
-                                      type: PageTransitionType.rightToLeft,
-                                      child: DoulaList(
-                                        user: user,
-                                      )));
+                              Navigator.of(context).push(CreateRoute(
+                                  page: DoulaList(
+                                user: user,
+                              )));
                             },
                             child: Text(
                               "Next",

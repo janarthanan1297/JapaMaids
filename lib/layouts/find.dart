@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:japamaids/animation/page_transition.dart';
 import 'package:japamaids/layouts/map.dart';
-import 'package:page_transition/page_transition.dart';
 
 class FindDoula extends StatefulWidget {
   @override
@@ -53,7 +53,7 @@ class _FindDoulaState extends State<FindDoula> {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: Maps()));
+                  Navigator.push(context, CreateRoute(page: Maps()));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.75,

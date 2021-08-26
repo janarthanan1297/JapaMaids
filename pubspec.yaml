@@ -35,7 +35,6 @@ dependencies:
   fluttertoast: ^7.1.4
   flutter_staggered_animations: ^0.1.2
   skeleton_animation: ^0.1.4
-  page_transition: ^2.0.2
   
 
 dev_dependencies:
