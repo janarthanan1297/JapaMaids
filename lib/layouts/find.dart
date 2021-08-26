@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:japamaids/layouts/doula_list.dart';
 import 'package:japamaids/layouts/map.dart';
+import 'package:page_transition/page_transition.dart';
 
 class FindDoula extends StatefulWidget {
   @override
@@ -15,12 +15,11 @@ class _FindDoulaState extends State<FindDoula> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.grey,
-          ),
+          icon: Icon(Icons.arrow_back, color: Color(0xff626A7D), size: 16),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pop(
+              context,
+            );
           },
         ),
       ),
@@ -31,27 +30,35 @@ class _FindDoulaState extends State<FindDoula> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Hello nice to meet you !",
-                style: TextStyle(fontFamily: "Avenir", fontSize: 18, color: Colors.grey, fontWeight: FontWeight.bold),
+                "Hello, nice to meet you!",
+                style: TextStyle(
+                    fontFamily: "Nunito Sans", fontSize: 13, color: Color(0xff626A7D).withOpacity(0.5019607843137255), fontWeight: FontWeight.bold),
+                textAlign: TextAlign.left,
               ),
               SizedBox(
-                height: 20,
+                height: 23,
               ),
               Text(
                 "To find japas around",
-                style: TextStyle(fontFamily: "Avenir", fontSize: 24, color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontFamily: "Nunito Sans",
+                  fontSize: 22,
+                  color: Color(0xff474747),
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.left,
               ),
               SizedBox(
-                height: 40,
+                height: 71,
               ),
               InkWell(
                 onTap: () {
-                  Navigator.push(context, new MaterialPageRoute(builder: (context) => Maps()));
+                  Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: Maps()));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.75,
-                  height: 50,
-                  decoration: BoxDecoration(color: Colors.orangeAccent, borderRadius: BorderRadius.circular(15), boxShadow: [
+                  height: 48,
+                  decoration: BoxDecoration(color: Color(0xffFFA600), borderRadius: BorderRadius.circular(15), boxShadow: [
                     BoxShadow(
                       color: Colors.black26,
                       blurRadius: 5,
@@ -60,9 +67,28 @@ class _FindDoulaState extends State<FindDoula> {
                     )
                   ]),
                   child: Center(
-                    child: Text(
-                      "Your current location",
-                      style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600, color: Colors.white),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.my_location_rounded,
+                          color: Colors.white,
+                          size: 16,
+                        ),
+                        SizedBox(
+                          width: 14,
+                        ),
+                        Text(
+                          "Your current location",
+                          style: TextStyle(
+                            fontFamily: "Nunito Sans",
+                            fontSize: 14,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -74,12 +100,31 @@ class _FindDoulaState extends State<FindDoula> {
                 onTap: () {},
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.75,
-                  height: 50,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), border: Border.all(color: Colors.orangeAccent, width: 3)),
+                  height: 48,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), border: Border.all(color: Color(0xffFFA600), width: 2)),
                   child: Center(
-                    child: Text(
-                      "Search your location",
-                      style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600, color: Colors.orangeAccent),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.search,
+                          color: Color(0xff626A7D),
+                          size: 16,
+                        ),
+                        SizedBox(
+                          width: 14,
+                        ),
+                        Text(
+                          "Search your location",
+                          style: TextStyle(
+                            fontFamily: "Nunito Sans",
+                            fontSize: 14,
+                            color: Color(0xff626A7D),
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -96,12 +141,12 @@ class _FindDoulaState extends State<FindDoula> {
                   child: Text(
                     "Skip",
                     style: TextStyle(
-                      fontFamily: "Avenir",
-                      fontSize: 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline,
-                    ),
+                        fontFamily: "Nunito Sans",
+                        fontSize: 14,
+                        color: Color(0xff626A7D),
+                        fontWeight: FontWeight.w400,
+                        decoration: TextDecoration.underline),
+                    textAlign: TextAlign.left,
                   ),
                 ),
               )
